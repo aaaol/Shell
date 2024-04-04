@@ -18,7 +18,7 @@ clear_log_files() {
     # 使用 journalctl 清空 systemd-journald 日志
     echo "清空 systemd-journald 日志..."
     sudo journalctl --rotate
-    sudo journalctl --vacuum-time=1s
+    sudo journalctl --vacuum-size=0
     echo "systemd-journald 日志已清空。"
 }
 
