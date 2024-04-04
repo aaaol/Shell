@@ -14,7 +14,12 @@ clear_log_files() {
     echo "清空登录日志文件..."
     sudo truncate -s 0 /var/log/auth.log
     sudo truncate -s 0 /var/log/secure  # 仅适用于部分系统，可以根据实际情况删除或注释此行
-    echo "登录日志文件已清空。"
+    
+    # 使用 journalctl 清空 systemd-journald 日志
+    echo "清空 systemd-journald 日志..."
+    sudo journalctl --rotate
+    sudo journalctl --vacuum-time=1s
+    echo "systemd-journald 日志已清空。"
 }
 
 # 主函数
@@ -52,4 +57,3 @@ EOF
 
 # 执行创建并配置 systemd 服务
 create_systemd_service
-
