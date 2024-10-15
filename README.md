@@ -20,5 +20,5 @@ curl -fsSL -o date.sh https://raw.githubusercontent.com/aaaol/Shell_Docker/main/
 
 RustDesk 自建Docker中继服务
 ~~~
-curl -fsSL -o docker-compose.yaml https://raw.githubusercontent.com/aaaol/Shell_Docker/main/Docker/docker-compose.yaml && chmod +x docker-compose.yaml &&./docker-compose up -d
+curl -fsSL -o docker-compose.yaml https://raw.githubusercontent.com/aaaol/Shell_Docker/main/Docker/docker-compose.yaml && chmod +x docker-compose.yaml &&docker-compose up -d
 ~~~
